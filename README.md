@@ -7,6 +7,7 @@
 
 # 🎄 Advent of Code 2021 🎄
 
+Using https://github.com/caderek/aocrunner
 
 ## Installation
 
