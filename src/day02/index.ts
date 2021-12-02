@@ -27,8 +27,27 @@ const part1 = (rawInput: string) => {
 
 const part2 = (rawInput: string) => {
   const input = parseInput(rawInput);
+  const arrayInput = input.split("\n");
+  const splitArray = arrayInput.map((line) => line.split(/[\s]+/));
+  console.log(splitArray);
+  let depth: number = 0;
+  let forward:number = 0;
+  let aim:number = 0;
+  splitArray.forEach((singleLine) => {
+    let direction: string = singleLine[0]
+    let distance: number = Number.parseInt(singleLine[1])
 
-  return;
+    if(direction === 'forward'){
+      forward += distance;
+      depth += (distance * aim);
+    } else if(direction === 'up'){
+      aim -= distance;
+    } else if(direction === 'down'){
+      aim += distance;
+    }
+
+  })
+  return depth * forward;
 };
 
 run({
